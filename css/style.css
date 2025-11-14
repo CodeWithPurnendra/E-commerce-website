@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+  --primary: #00f5d4;
+  --secondary: #9b5de5;
+  --accent: #f15bb5;
+  --bg: #0b0c10;
+  --surface: #1f2232;
+  --text: #eaeaea;
+  --muted: #8b8c8f;
+}
+
+head{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(135deg, #0b0c10, #1f2232);
+}
+
+.logo{
+    color: var(--text);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+.nav-bar ul{
+    display: flex;
+    gap: 49px;
+    margin-left: 633px;
+    position: absolute;
+    top: 16px;
+}
+
+.nav-bar ul li{
+    list-style: none;
+}
+
+.nav-bar ul a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+.nav-bar ul a {
+    text-decoration: none;
+    color: var(--text);
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.3s ease;
+}
+
+/* Smooth underline slide effect (accessible & minimal motion) */
+.nav-bar ul a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: var(--accent, #ff9800); /* fallback accent color */
+    transition: width 0.3s ease;
+}
+
+/* Hover effect */
+.nav-bar ul a:hover {
+    color: var(--accent, #ff9800);
+}
+
+.nav-bar ul a:hover::after {
+    width: 100%;
+}
+
+/* Keyboard accessibility (very important for WCAG compliance) */
+.nav-bar ul a:focus {
+    outline: 2px solid var(--accent, #ff9800);
+    outline-offset: 4px;
+}
